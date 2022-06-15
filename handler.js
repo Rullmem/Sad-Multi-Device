@@ -406,26 +406,26 @@ esteh: 0,
                 if (chat) {
 	                if (!('isBanned' in chat)) chat.isBanned = false
 	                if (!('welcome' in chat)) chat.welcome = true
-	                if (!('detect' in chat)) chat.detect = false
+	                if (!('detect' in chat)) chat.detect = true
 	                if (!('sWelcome' in chat)) chat.sWelcome = ''
 	                if (!('sBye' in chat)) chat.sBye = ''
 	                if (!('sPromote' in chat)) chat.sPromote = ''
 	                if (!('sDemote' in chat)) chat.sDemote = ''
-	                if (!('antiDelete' in chat)) chat.antiDelete = false
-	                if (!('antiLink' in chat)) chat.antiLink = false
-	                if (!('viewOnce' in chat)) chat.viewOnce = false
+	                if (!('antiDelete' in chat)) chat.antiDelete = true
+	                if (!('antiLink' in chat)) chat.antiLink = trur
+	                if (!('viewOnce' in chat)) chat.viewOnce = true
 	                if (!isNumber(chat.expired)) chat.expired = 0
 	            } else global.db.data.chats[m.chat] = {
 	                isBanned: false,
 	                welcome: true,
-	                detect: false,
+	                detect: true,
 	                sWelcome: '',
 	                sBye: '',
 	                sPromote: '',
 	                sDemote: '',
-	                antiDelete: false,
-	                antiLink: false,
-	                viewOnce: false,
+	                antiDelete: true,
+	                antiLink: true,
+	                viewOnce: true,
 	                expired: 0
 	            }
             }
@@ -433,12 +433,12 @@ esteh: 0,
             if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
             if (settings) {
                 if (!('self' in settings)) settings.self = false
-                if (!('autoread' in settings)) settings.autoread = false
-                if (!('restrict' in settings)) settings.restrict = false
+                if (!('autoread' in settings)) settings.autoread = true
+                if (!('restrict' in settings)) settings.restrict = true
             } else global.db.data.settings[this.user.jid] = {
                 self: false,
-                autoread: false,
-                restrict: false
+                autoread: true,
+                restrict: true
             }
         } catch (e) {
             console.error(e)
@@ -793,13 +793,13 @@ To turn off this feature, type
 
 global.dfail = (type, m, conn) => {
     let msg = {
-        rowner: 'This command can only be used by _*OWWNER!1!1!*_',
-        owner: 'This command can only be used by _*Owner Bot*_!',
-        mods: 'This command can only be used by _*Moderator*_ !',
-        premium: 'This command is only for _*Premium*_ members!',
-        group: 'This command can only be used in groups!',
-        private: 'This command can only be used in Private Chat!',
-        admin: 'This command is only for *Admin* group!',
+        rowner: '*Perintah Khusus ArullOfc*',
+        owner: '*Perintah Khusus ArullOfc*',
+        mods: '*Perintah Khusus ArullOfc*',
+        premium: '*Khusus Member Premium*',
+        group: '*Khusus Group*',
+        private: '*Khusus Private Chat*',
+        admin: '*Khusus Admin*',
         botAdmin: 'Make bot as *Admin* to use this command!',
         unreg: 'Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar Manusia.16*',
         restrict: 'This feature is *disabled*!'
